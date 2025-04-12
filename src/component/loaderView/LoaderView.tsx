@@ -10,7 +10,6 @@ const LoaderView = () => {
         <ActivityIndicator size="large" color={COLORS.primary._500} />
         <Text
           label="Loading..."
-          textFamily="_600_SEMI_BOLD"
           variant="LABEL_LARGE"
           textColor="primary._500"
           style={styles.textView}

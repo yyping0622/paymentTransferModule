@@ -1,59 +1,108 @@
-# Getting Started
+# Payment Transfer Module
 
-## Step 1: Start Metro
+A Simple Biometrics authentication app for payment transfer.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+Mock Data:
+- Username: Jess Pang
+- Total Balance: MYR 10,000.00 (Will always reset after initial app)
+- User PIN: 1234
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Feature:
+- Validation for transfer form.
+- Biometric authentication prompted upon the payment transfer happens for user authentication.
+- Simulate API call for processing the transaction and balance will deduct after api call.
+- Implemented proper error handling for various scenarios.
+- History tab will display recent transaction history for quick re-sending.
 
-```sh
-# Using npm
-npm start
+**App will fallback insert PIN for devices without biometric capabilities**
+                                **PIN: 1234**
 
-# OR using Yarn
+## Getting Started
+
+Follow these instructions to set up and run the project locally.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js
+- Yarn
+- React Native CLI
+- Xcode (for iOS)
+- Android Studio (for Android)
+
+---
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+yarn install
+```
+
+---
+
+## Running the App
+
+### Start Metro Bundler
+
+```bash
 yarn start
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
+---
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Install iOS dependencies:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+yarn install:ios
 ```
 
-Then, and every time you update your native dependencies, run:
+Run the app on iOS:
 
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
+```bash
 yarn ios
+
+# OR Run in specific simulator
+yarn ios --simulator="iPhone 16 Pro"
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### Android
+
+Run the app on Android:
+
+```bash
+yarn android
+```
+
+---
+
+## Design Decision and challenges
+
+**Design:**
+- Redux toolkit for state management
+- Formik and yup for textField and button validation
+- Redux RTK query for simulate api service call
+- Custom usehook for business logic
+- MUI theming strategies for shared/re-useable component
+
+**Challenges:**
+- Lack of real device for testing
+- Minimum time for overall testing or enhance UX
+
+
+## Troubleshooting
+
+- For iOS: Make sure you’ve run `cd ios && pod install` if needed.
+- Ensure your emulator/simulator is running before executing platform-specific commands.
+
+---
+
+## Demo Video URL
+
+-  Link: https://drive.google.com/drive/folders/19LhGG5v4xjzz4ytFwwLr43AhiYPKzihy?usp=share_link

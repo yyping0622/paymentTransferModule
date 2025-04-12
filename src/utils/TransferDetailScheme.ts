@@ -1,5 +1,4 @@
 import * as yup from 'yup';
-import {TransactionDetail} from '../types/TransactionDetailDataType';
 
 export const transferSchema = yup.object().shape({
   recipientAccNum: yup.string().required('Recipient is required'),

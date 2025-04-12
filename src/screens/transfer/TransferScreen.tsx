@@ -1,14 +1,17 @@
-import {KeyboardAvoidingView, ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
-import TitleTextFieldView from './component/TitleTextFieldView';
-import {COLORS} from '../../utils/ShareUtils';
+import {
+  KeyboardAvoidingView,
+  ScrollView,
+  StyleSheet,
+  View,
+  Keyboard,
+} from 'react-native';
 import {Button} from '../../component';
 import {useTransferForm} from '../../useHook/UseTransferForm';
-import {RouteProp, useRoute} from '@react-navigation/native';
-import {StacksParamList} from '../../types/ScreenTypes';
+import {COLORS} from '../../utils/ShareUtils';
+import TitleTextFieldView from './component/TitleTextFieldView';
 
 const TransferScreen = () => {
-  
   const {formik} = useTransferForm();
   const {handleSubmit} = formik;
   return (
@@ -31,7 +34,13 @@ const TransferScreen = () => {
         </ScrollView>
       </KeyboardAvoidingView>
       <View style={styles.buttonView}>
-        <Button title="Continue" onClick={() => handleSubmit()} />
+        <Button
+          title="Continue"
+          onClick={() => {
+            Keyboard.dismiss();
+            handleSubmit();
+          }}
+        />
       </View>
     </View>
   );
