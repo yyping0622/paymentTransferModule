@@ -15,7 +15,7 @@ Feature:
 - History tab will display recent transaction history for quick re-sending.
 
 **App will fallback insert PIN for devices without biometric capabilities**
-                                **PIN: 1234**
+- Hardcode PIN **PIN: 1234**
 
 ## Getting Started
 
